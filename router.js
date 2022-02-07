@@ -56,6 +56,15 @@ router.get("/movies/categories", (req, res) => {
   }
 });
 
+router.get("/movies/roles", (req, res) => {
+  try {
+    res.send(constants.crewMemberRoles);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: "Something went wrong" });
+  }
+});
+
 router.get("/movies/:id", middlewares.validateId, async (req, res) => {
   try {
     const { id } = req.params;

@@ -53,6 +53,7 @@ module.exports = {
 
   validateId: (req, res, next) => {
     const { id } = req.params;
+    console.log(id);
     if (!id || isNaN(Number(id))) {
       return res.status(400).send({ message: "Validation error!" });
     }
@@ -61,6 +62,7 @@ module.exports = {
 
   validateCrewMember: (req, res, next) => {
     const { body } = req;
+    console.log(body);
     if (body.name && body.name.length < 5) {
       return res.status(400).send({ message: "Validation error! (name)" });
     }
