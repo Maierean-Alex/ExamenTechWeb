@@ -4,10 +4,10 @@ const path = require("path");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "web-app/build")));
+app.use(express.static(path.join(__dirname, "/build")));
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "web-app/build", "index.html"));
+  res.sendFile(path.join(__dirname, "/build", "index.html"));
 });
 
 app.use(require("cors")());
